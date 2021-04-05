@@ -1,0 +1,58 @@
+.button {
+	&:link,
+	&:visited {
+		@include link-item;
+		display: block;
+		background-color: $color-red;
+		transition: all 0.4s;
+		padding: 0.5rem 3rem;
+
+		@include screen(tab-land) {
+			background-color: $color-black;
+		}
+	}
+
+	&:hover {
+		transform: translateY(-0.5rem);
+		@include screen(tab-land) {
+			transform: translateY(-0.5rem);
+		}
+	}
+
+	&:active {
+		transform: translateY(0.5rem);
+
+		@include screen(tab-land) {
+			transform: translateY(0);
+		}
+	}
+}
+
+.button-secondary {
+	margin-top: 10rem;
+
+	&:link,
+	&:visited {
+		display: inline-block;
+		text-decoration: none;
+		color: $color-white;
+		border: 1px solid $color-red;
+		padding: 1rem 3rem;
+		font-size: 3.5rem;
+		font-weight: 700;
+		transition: all 0.3s;
+	}
+
+	&:hover {
+		background-color: $color-red;
+		transform: translateY(-0.5rem);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	@include screen(tab-land) {
+		margin-top: 5rem;
+	}
+}

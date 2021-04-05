@@ -1,0 +1,41 @@
+@mixin link-item {
+	display: block;
+	text-decoration: none;
+	color: $color-white;
+	padding: 0.5rem 1rem;
+}
+
+@mixin flexcenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin tablet {
+	@media (max-width: 700px) {
+		@content;
+	}
+}
+
+@mixin screen($brakepoint) {
+	//600px
+	@if $brakepoint == phone {
+		@media (max-width: 37.5em) {
+			@content;
+		}
+	}
+
+	// 900px
+	@if $brakepoint == tab-port {
+		@media (max-width: 56.25em) {
+			@content;
+		}
+	}
+
+	//1200px
+	@if $brakepoint == tab-land {
+		@media (max-width: 75em) {
+			@content;
+		}
+	}
+}

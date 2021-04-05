@@ -1,0 +1,26 @@
+.header {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: $color-white;
+	transform: translate(-50%, -50%);
+	text-align: center;
+
+	&__heading {
+		cursor: default;
+		font-size: 10rem;
+		line-height: 120%;
+
+		&--main {
+			display: block;
+			color: $color-white;
+		}
+
+		&--secondary {
+			color: $color-red;
+		}
+		@include screen(tab-land) {
+			font-size: 6.5rem;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.icons {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	bottom: 0;
+	padding: 5rem;
+	width: 100%;
+
+	&__container {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 2rem;
+		}
+
+		@include screen(tab-land) {
+			&:not(:last-child) {
+				margin-right: 1.5rem;
+			}
+		}
+	}
+
+	&__link {
+		&:visited,
+		&:link {
+			display: block;
+			font-size: 3rem;
+			color: $color-white;
+			text-decoration: none;
+			transition: all 0.3s;
+
+			@include screen(tab-land) {
+				font-size: 2rem;
+			}
+		}
+
+		&:hover {
+			transform: translateY(-0.5rem);
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+	}
+}
