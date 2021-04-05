@@ -19,7 +19,13 @@
 		}
 
 		@include screen(tab-land) {
-			width: 40%;
+			width: 30%;
+		}
+		@include screen(tab-port) {
+			width: 50%;
+		}
+		@include screen(phone) {
+			width: 60%;
 		}
 	}
 
@@ -40,7 +46,9 @@
 	}
 
 	&__button {
-		position: relative;
+		position: fixed;
+		top: 2rem;
+		right: 3rem;
 		visibility: hidden;
 		background-color: $color-white;
 		border-radius: 50%;
@@ -138,12 +146,6 @@
 	}
 
 	&__item {
-		@include screen(tab-land) {
-			&:not(:last-child) {
-				margin-bottom: 3rem;
-			}
-		}
-
 		&:not(:last-child) {
 			margin-right: 5rem;
 
@@ -151,7 +153,20 @@
 				margin-right: 0.5rem;
 			}
 		}
+
+		@include screen(tab-land) {
+			&:not(:last-child) {
+				margin-bottom: 3rem;
+			}
+		}
+
+		@include screen(phone) {
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
 	}
+
 	&__checkbox:checked ~ &__background {
 		width: 100%;
 	}
@@ -173,5 +188,10 @@
 
 	@include screen(tab-land) {
 		font-size: 1.6rem;
+		padding: 3rem 2rem;
+	}
+
+	@include screen(phone) {
+		padding: 3.5rem 3rem;
 	}
 }
